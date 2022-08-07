@@ -1,18 +1,23 @@
 import axiosClient from "./axiosClient";
 
-const fetchUsersData = page => {
-    return axiosClient.get(`/api/users?page=${page}`);
+const fetchUsersData = async page => {
+    return await axiosClient.get(`/api/users?page=${page}`);
 };
 
-const createNewUser = (name, job) => {
-    return axiosClient.post("/api/users", { name, job });
+const createNewUser = async (name, job) => {
+    return await axiosClient.post("/api/users", { name, job });
 };
 
-const updateUser = (name, job) => {
-    return axiosClient.put("/api/users/2", { name, job });
+const updateUser = async (name, job) => {
+    return await axiosClient.put("/api/users/2", { name, job });
 };
 
-const deleteUser = id => {
-    return axiosClient.delete(`/api/users/${id}`);
+const deleteUser = async id => {
+    return await axiosClient.delete(`/api/users/${id}`);
 };
-export { fetchUsersData, createNewUser, updateUser, deleteUser };
+
+const loginUser = async (email, password) => {
+    return await axiosClient.post("/api/login", { email, password });
+};
+
+export { fetchUsersData, createNewUser, updateUser, deleteUser, loginUser };
