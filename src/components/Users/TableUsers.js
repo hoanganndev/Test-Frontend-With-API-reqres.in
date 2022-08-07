@@ -176,11 +176,11 @@ const TableUsers = () => {
     };
     return (
         <>
-            <div className="my-3 add-new-user">
-                <span>
+            <div className="my-3 add-new-user d-sm-flex">
+                <span className="">
                     <h4>List Users</h4>
                 </span>
-                <div className="group-btns">
+                <div className="group-btns mt-2 mt-sm-0">
                     <label
                         htmlFor="import-file"
                         className="btn btn-outline-warning"
@@ -213,7 +213,7 @@ const TableUsers = () => {
                     </button>
                 </div>
             </div>
-            <div className="col-4 my-3">
+            <div className="col-12 col-sm-4 my-3">
                 <input
                     type="text"
                     className="form-control"
@@ -272,7 +272,7 @@ const TableUsers = () => {
                                     <td>{user.email}</td>
                                     <td>{user.first_name}</td>
                                     <td>{user.last_name}</td>
-                                    <td>
+                                    <td className="d-flex">
                                         <button
                                             className="btn btn-outline-warning mx-3"
                                             onClick={() => handleEditUser(user)}
