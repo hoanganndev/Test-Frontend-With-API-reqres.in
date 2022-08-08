@@ -2,6 +2,8 @@
 
 ## [Click here get API](https://reqres.in)
 
+## [View Demo](https://frontend-with-api-reqres.herokuapp.com)
+
 ### NPM package in this project
 
 Bootstrap, react-bootstrap:
