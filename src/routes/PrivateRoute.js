@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { UserContext } from "../context/userContext";
+import React from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const PrivateRoute = props => {
-    const { user } = useContext(UserContext);
+    const { account } = useSelector(state => state.user);
     let navigate = useNavigate();
-    if (user && !user.auth) {
+    console.log(">>> check me", account);
+    if (account && !account.auth) {
         return (
             <>
                 <div
