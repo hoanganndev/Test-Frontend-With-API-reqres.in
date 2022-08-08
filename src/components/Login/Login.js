@@ -1,34 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
-import "./Login.scss";
-import { loginUser } from "../../services/usersService";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/userContext";
-
+import { handleLoginRedux } from "../../redux/actions/userActions";
+import { useNavigate } from "react-router-dom";
+import "./Login.scss";
 const Login = () => {
     const navigate = useNavigate();
-    const { loginContext } = useContext(UserContext);
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isShowPass, setIsShowPass] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const isLoading = useSelector(state => state.user.isLoading);
+    const account = useSelector(state => state.user.account);
 
     const handleLogin = async () => {
         if (!email || !password) {
             toast.warning("Email/Password is required !");
             return;
         }
-        setIsLoading(true);
-        let res = await loginUser(email.trim(), password);
-        if (res && res.token) {
-            loginContext(email, res.token);
-            toast.success("Login success !");
-            navigate("/");
-        }
-        if (res && res.status === 400 && res.data) {
-            toast.warning(res.data.error);
-        }
-        setIsLoading(false);
+
+        dispatch(handleLoginRedux(email, password));
     };
 
     const handleGoBack = () => {
@@ -42,11 +33,10 @@ const Login = () => {
     };
 
     useEffect(() => {
-        let token = localStorage.getItem("token");
-        if (token) {
+        if (account && account.auth === true) {
             navigate("/");
         }
-    }, []);
+    }, [account]);
 
     return (
         <>

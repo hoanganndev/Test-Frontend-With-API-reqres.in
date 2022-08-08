@@ -1,15 +1,15 @@
+import _, { debounce } from "lodash";
+import Papa from "papaparse";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { fetchUsersData } from "../../services/usersService";
+import { CSVLink } from "react-csv";
 import ReactPaginate from "react-paginate";
+import { toast } from "react-toastify";
+import { fetchUsersData } from "../../services/usersService";
 import ModalAddUser from "./ModalAddUser";
+import ModalConfirm from "./ModalConfirm";
 import ModalEditUser from "./ModalEditUser";
 import "./TableUsers.scss";
-import _, { debounce } from "lodash";
-import ModalConfirm from "./ModalConfirm";
-import { CSVLink, CSVDownload } from "react-csv";
-import Papa from "papaparse";
-import { toast } from "react-toastify";
 const TableUsers = () => {
     const [listUsers, setListUsers] = useState([]);
     const [totalUsers, setTotalUsers] = useState(0);
@@ -101,7 +101,6 @@ const TableUsers = () => {
 
     // Search
     const handleSearch = debounce(e => {
-        console.log(">>> handle search");
         let value = e.target.value;
         if (value) {
             let _listUsers = _.cloneDeep(listUsers);

@@ -6,21 +6,22 @@ const Home = () => {
             <div className="row">
                 <div className="col-12 mt-3 ">
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">🌵 đăng nhập</li>
+                        <li className="list-group-item">🌵 Login,Logout</li>
                         <li className="list-group-item">
-                            🌵 thêm,xóa,sửa user
+                            🌵 Authen user when reload page
+                        </li>
+                        <li className="list-group-item">🌵 CRUD user</li>
+                        <li className="list-group-item">
+                            🌵 Display users by pagination
                         </li>
                         <li className="list-group-item">
-                            🌵 hiển thị tất cả user
+                            🌵 Search users by email
                         </li>
                         <li className="list-group-item">
-                            🌵 tìm kiếm user theo email
+                            🌵 sort by id, email
                         </li>
                         <li className="list-group-item">
-                            🌵 sắp xếp theo id, first name
-                        </li>
-                        <li className="list-group-item">
-                            🌵 import và export file csv
+                            🌵 Import and export file csv
                         </li>
                     </ul>
                 </div>
