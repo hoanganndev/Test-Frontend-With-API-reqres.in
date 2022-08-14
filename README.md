@@ -2,6 +2,8 @@
 
 ## [Click here get API](https://reqres.in)
 
+## [View Demo](https://frontend-with-api-reqres.herokuapp.com)
+
 ### NPM package in this project
 
 Bootstrap, react-bootstrap:
@@ -10,46 +12,46 @@ Bootstrap, react-bootstrap:
 npm i --save-exact react-bootstrap@2.2.2 bootstrap@5.1.3 sass@1.49.10 axios@0.26.1
 ```
 
-fortawesome:
+Fortawesome:
 
 ```sh
 npm i --save-exact @fortawesome/fontawesome-free@6.1.1
 ```
 
-react-paginate:
+React-paginate:
 
 ```sh
 npm i --save-exact react-paginate@8.1.2
 ```
 
-react-toastify:
+React-toastify:
 
 ```sh
 npm i --save-exact react-toastify@8.2.0
 ```
 
-react-csv, papaparse :
+React-csv, papaparse :
 
 ```sh
 npm i --save-exact react-csv@2.2.2 papaparse@5.3.2
 ```
 
-react-router-dom:
+React-router-dom:
 
 ```sh
 npm i --save-exact react-router-dom@6.3.0
 ```
 
-redux, react-redux:
+Redux, react-redux:
 
 ```sh
-npm i --save-exact redux@4.2.0 react-redux@8.0.1
+Rpm i --save-exact redux@4.2.0 react-redux@8.0.1
 ```
 
-redux-devtools-extension,redux-thunk:
+Redux-devtools-extension,redux-thunk:
 
 ```sh
 npm i --save-exact redux-devtools-extension@2.13.9 redux-thunk@2.4.1
 ```
 
-**Marcus !**
+**Create by | Marcus !**
